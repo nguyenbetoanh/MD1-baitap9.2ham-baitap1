@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input id="kiemTra" type="number">
+<button onclick="bamVao()">Kiểm Tra</button>
+<h1 id="ht"></h1>
+<br>
+<script>
+
+  function isprime(n){
+    let a = 1;
+    if (n <2)
+      return a = 0;
+    let i = 2;
+    while(i <n){
+      if( n%i==0 ) {
+        a = 0;
+        break;
+      }
+      i++;
+    }
+
+    return a;
+  }
+  bamVao()
+
+  function bamVao(){
+    let n= document.getElementById('kiemTra').value
+    console.log(n)
+    let i = 0,
+            check=0,
+            result ="";
+    while ( i < n){
+      check = isprime(i);
+      if( check == 1 )
+        result += i + " ";
+      ++i;
+    }
+    document.getElementById('ht').innerHTML= 'những số sau đây là số nguyên tố:' +result
+  }
+</script>
+</body>
+</html>
